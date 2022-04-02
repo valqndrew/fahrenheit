@@ -18,7 +18,7 @@ const achievements = [
 
 const AchievementItem = ({ head, title }) => {
   return (
-    <Grid item xs={12} >
+    <Grid item xs={12}>
       <Paper sx={{ p: 2 }}>
         <Typography align="center" variant="h3">
           {head}

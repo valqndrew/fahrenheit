@@ -4,16 +4,24 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 import "../styles/styles.css";
 import { Box, Fab } from "@mui/material";
+import styled from "@emotion/styled";
+
+const SocialFab = styled(Fab)({
+  position: "fixed",
+  bottom: 20
+});
 const SocialMedia = () => {
   return (
-    <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-      <Fab>
+    <>
+      <SocialFab sx={{left:20}}>
         <WhatsAppIcon />
-      </Fab>
-      <Fab>
+      </SocialFab>
+      <SocialFab sx={{
+        right: 20
+      }}>
         <TelegramIcon />
-      </Fab>
-    </Box>
+      </SocialFab>
+    </>
   );
 };
 

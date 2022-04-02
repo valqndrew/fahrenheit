@@ -7,6 +7,7 @@ import Footer from "./Components/Footer";
 
 import "./styles/styles.css";
 import SocialMedia from "./Components/SocialMedia";
+import TokenSwap from "./Components/TokenSwap";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Cryptos />
       <Benefits />
       <Achievements />
+      <TokenSwap />
       <Footer />
     </>
   );

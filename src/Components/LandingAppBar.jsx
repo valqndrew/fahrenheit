@@ -23,7 +23,7 @@ const LandingAppBar = () => {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
-              <Typography variant="h5">Fahrenheit</Typography>
+              <Typography variant="h6">Fahrenheit</Typography>
             </Box>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -39,7 +39,7 @@ const LandingAppBar = () => {
               </IconButton>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <Typography variant="h4">Fahrenheit</Typography>
+              <Typography variant="h6">Fahrenheit</Typography>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
