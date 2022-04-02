@@ -6,10 +6,12 @@ import Achievements from "./Components/Achievements";
 import Footer from "./Components/Footer";
 
 import "./styles/styles.css";
+import SocialMedia from "./Components/SocialMedia";
 
 function App() {
   return (
     <>
+      <SocialMedia />
       <LandingAppBar />
       <Hero />
       <Cryptos />
