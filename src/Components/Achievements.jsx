@@ -18,10 +18,14 @@ const achievements = [
 
 const AchievementItem = ({ head, title }) => {
   return (
-    <Grid item xs={12}>
-      <Paper>
-        <Typography variant="h6">{head}</Typography>
-        <Typography variant="body1">{title}</Typography>
+    <Grid item xs={12} >
+      <Paper sx={{ p: 2 }}>
+        <Typography align="center" variant="h3">
+          {head}
+        </Typography>
+        <Typography align="center" variant="body1">
+          {title}
+        </Typography>
       </Paper>
     </Grid>
   );
