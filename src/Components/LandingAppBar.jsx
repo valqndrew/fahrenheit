@@ -7,8 +7,25 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
+import { InputAdornment, MenuItem, TextField } from "@mui/material";
+import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 
 const pages = ["Integrate", "Secure", "Authenticate", "Lock", "USE"];
+
+const langs = [
+  {
+    value: "",
+    label: "",
+  },
+  {
+    value: "en",
+    label: "en",
+  },
+  {
+    value: "fr",
+    label: "fr",
+  },
+];
 
 const LandingAppBar = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -17,30 +34,53 @@ const LandingAppBar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const [lang, setLang] = React.useState("");
+
+  const handleLangChange = (e) => {
+    setLang(e.target.value);
+  };
+
   return (
     <>
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
+            {/* Desktop */}
             <Box sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
               <Typography variant="h6">Fahrenheit</Typography>
             </Box>
 
+            {/* Mobile */}
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={toggleMenu}
-                color="inherit"
-              >
+              <IconButton size="large" onClick={toggleMenu} color="inherit">
                 <MenuIcon />
               </IconButton>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <Typography variant="h6">Fahrenheit</Typography>
             </Box>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <TextField
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <LanguageOutlinedIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                select
+                value={lang}
+                onChange={handleLangChange}
+              >
+                {langs.map(({ value, label }) => (
+                  <MenuItem key={value} value={value}>
+                    {label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </Box>
+
+            {/* Desktop */}
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
@@ -63,7 +103,7 @@ const LandingAppBar = () => {
           alignItems="center"
         >
           {pages.map((page) => (
-            <Button  variant="outlined" sx={{ width: "100%" }}>
+            <Button variant="outlined" sx={{ width: "100%" }}>
               {page}
             </Button>
           ))}
