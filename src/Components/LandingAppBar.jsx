@@ -24,8 +24,8 @@ const langs = [
     label: "en",
   },
   {
-    value: "fr",
-    label: "fr",
+    value: "de",
+    label: "de",
   },
 ];
 
