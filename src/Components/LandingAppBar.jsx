@@ -37,7 +37,7 @@ const LandingAppBar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const [lang, setLang] = React.useState("en");
+  const [lang, setLang] = React.useState("de");
 
   const handleLangChange = (e) => {
     setLang(e.target.value);
