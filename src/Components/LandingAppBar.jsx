@@ -9,6 +9,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import { InputAdornment, MenuItem, TextField } from "@mui/material";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import i18next from "i18next";
 
 const pages = ["Integrate", "Secure", "Authenticate", "Lock", "USE"];
 
@@ -38,6 +39,7 @@ const LandingAppBar = () => {
 
   const handleLangChange = (e) => {
     setLang(e.target.value);
+    i18next.changeLanguage(e.target.value);
   };
 
   return (
