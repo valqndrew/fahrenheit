@@ -1,20 +1,6 @@
 import { Container, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
-
-const achievements = [
-  {
-    head: "$500m",
-    title: "In Held Assets",
-  },
-  {
-    head: "10000+",
-    title: "Users",
-  },
-  {
-    head: 6,
-    title: "Supported Assets",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const AchievementItem = ({ head, title }) => {
   return (
@@ -32,11 +18,27 @@ const AchievementItem = ({ head, title }) => {
 };
 
 const Achievements = () => {
+  const { t } = useTranslation();
+  const achievements = [
+    {
+      head: "$500m",
+      title: t("in_held_assets"),
+    },
+    {
+      head: "10000+",
+      title: t("users"),
+    },
+    {
+      head: 6,
+      title: t("supported_assets"),
+    },
+  ];
+
   return (
     <Container>
       <Grid container spacing={2}>
-        {achievements.map(({ head, title }) => (
-          <AchievementItem head={head} title={title} />
+        {achievements.map(({ head, title }, index) => (
+          <AchievementItem head={head} title={title} key={index} />
         ))}
       </Grid>
     </Container>

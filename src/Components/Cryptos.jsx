@@ -1,5 +1,6 @@
 import { Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const cryptos = [
   { name: "BTC" },
@@ -19,19 +20,19 @@ const CryptoItem = ({ name }) => {
 };
 
 const Cryptos = () => {
+  const { t } = useTranslation();
   return (
     <Container align="center">
-      <Typography variant="h6">Earn up to 12.73% APY!</Typography>
+      <Typography variant="h6">{t("cryptos_title")}</Typography>
       <Typography variant="subtitle1">
-        Start earning interests on any amount of crypto in the 6 assests we
-        support and get paid every Monday just by Fahrenheit
+        {t("cryptos_subtitle")}
       </Typography>
       <Grid container spacing={2}>
         {cryptos.map(({ name }, index) => (
           <CryptoItem name={name} key={index} />
         ))}
       </Grid>
-      <Button variant="contained">Our Rates</Button>
+      <Button variant="contained">{t("our_rates_button")}</Button>
     </Container>
   );
 };

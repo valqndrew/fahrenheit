@@ -1,12 +1,8 @@
 import { Container, Grid, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-const benefits = [
-  { benefit: "Weekly payouts to your wallet" },
-  { benefit: "Deposit and withdraw anytime" },
-  { benefit: "No lock-in periods or minimum deposits" },
-  { benefit: "Optional Nexus Mutual's Custody CoverI" },
-];
+
 
 const BenefitItem = ({ benefit }) => {
   return (
@@ -17,23 +13,21 @@ const BenefitItem = ({ benefit }) => {
 };
 
 const Benefits = () => {
+  const { t } = useTranslation();
+  const benefits = [
+    { benefit: t("benefit1") },
+    { benefit: t("benefit2") },
+    { benefit: t("benefit3") },
+    { benefit: t("benefit4") },
+  ];
   return (
     <Container>
-      <Typography variant="h6">
-        Fahrenheit's leading APY rates and custody cover puts your crypto to
-        work for you
-      </Typography>
-      <Typography variant="body1">
-        We've created market leading conditions to ensure your crypto not only
-        grows, but is safe in storage and transit.
-      </Typography>
-      <Typography variant="body1">
-        Explore how crypto interest accounts can benefit your stack with our
-        extensive resources
-      </Typography>
+      <Typography variant="h6">{t("benefits_title")}</Typography>
+      <Typography variant="body1">{t("benefits_body1")}</Typography>
+      <Typography variant="body1">{t("benefits_body2")}</Typography>
       <Grid container spacing={2}>
         {benefits.map(({ benefit }, index) => (
-          <BenefitItem benefit={benefit} />
+          <BenefitItem benefit={benefit} key={index} />
         ))}
       </Grid>
     </Container>

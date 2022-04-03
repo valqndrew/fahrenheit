@@ -1,12 +1,7 @@
 import { Button, Container, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-const steps = [
-  "Log in to your Fahrenheit account",
-  "Choose the token you would like to trade",
-  "Review the quote",
-  "Place your order",
-];
 
 const Step = ({ value }) => {
   return (
@@ -17,13 +12,20 @@ const Step = ({ value }) => {
 };
 
 const TokenSwap = () => {
+  const {t} = useTranslation()
+
+  const steps = [
+    t("step1"),
+    t("step2"),
+    t("step3"),
+    t("step4"),
+  ];
+  
   return (
     <Container>
-      <Typography variant="h6">Token Swap</Typography>
+      <Typography variant="h6">{t("token_swap_title")}</Typography>
       <Typography variant="p">
-        Execute trades instantly between any of the supported assests at
-        Fahrenheit. Manage your portfolio and rebalance asset holdings without
-        ever leaving Fahrenheit platform
+        {t("token_swap_paragraph")}
       </Typography>
       <ol>
         {steps.map((value, index) => (
@@ -31,7 +33,7 @@ const TokenSwap = () => {
         ))}
       </ol>
 
-      <Button variant="contained">Sign Up</Button>
+      <Button variant="contained">{t("sign_up_button")}</Button>
     </Container>
   );
 };

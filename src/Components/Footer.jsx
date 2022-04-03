@@ -10,26 +10,7 @@ import {
 import TelegramIcon from "@mui/icons-material/Telegram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import React from "react";
-const footerGroups = [
-  {
-    title: "Resources",
-    links: [
-      "Interest Rates",
-      "Withdrawal Fees",
-      "Blog",
-      "Referral Program",
-      "Fahrenheit Interest Account",
-    ],
-  },
-  {
-    title: "Company",
-    links: ["About Us", "Our Team", "Careers", "Media Center"],
-  },
-  {
-    title: "Help",
-    links: ["FAQ", "Contact Us", "Sign Up", "Demo", "Feedback Portal"],
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const FooterLink = ({ link }) => {
   return <Typography variant="body2">{link}</Typography>;
@@ -46,24 +27,53 @@ const FooterGroup = ({ title, links }) => {
   );
 };
 const Footer = () => {
+  const { t } = useTranslation();
+
+  const footerGroups = [
+    {
+      title: t("resources"),
+      links: [
+        t("interest_rates"),
+        t("withdrawal_fees"),
+        t("blog"),
+        t("referral_program"),
+        t("fahrenheit_interest_account"),
+      ],
+    },
+    {
+      title: t("company"),
+      links: [t("about_us"), t("our_team"), t("careers"), t("media_center")],
+    },
+    {
+      title: t("help"),
+      links: [
+        t("faq"),
+        t("contact_us"),
+        t("sign_up"),
+        t("demo"),
+        t("feedback_portal"),
+      ],
+    },
+  ];
+
   return (
     <Container align="center">
       <Grid container spacing={2}>
         {footerGroups.map(({ title, links }, index) => (
-          <FooterGroup title={title} links={links} />
+          <FooterGroup title={title} links={links} key={index} />
         ))}
       </Grid>
 
       <Box>
-        <Typography variant="h6">Subscribe for updates</Typography>
+        <Typography variant="h6">{t("subscribe_title")}</Typography>
         <Box>
-          <TextField label="Your email" />
-          <Button variant="contained">Subscribe</Button>
+          <TextField label={t("your_email")} />
+          <Button variant="contained">{t("subscribe_button")}</Button>
         </Box>
       </Box>
 
       <Box>
-        <Typography variant="h6">Connect with us</Typography>
+        <Typography variant="h6">{t("connect_title")}</Typography>
         <Box>
           <IconButton>
             <TelegramIcon />
@@ -75,34 +85,14 @@ const Footer = () => {
       </Box>
 
       <Box>
-        <Typography variant="h6">We are recognized & certified</Typography>
+        <Typography variant="h6">{t("footer_title")}</Typography>
         <Box>
-          <Button>Terms & Condition</Button>
-          <Button>Privacy Policy</Button>
+          <Button>{t("t_c_button")}</Button>
+          <Button>{t("privacy_text")}</Button>
         </Box>
-        <Typography variant="caption">
-          Hodlnaut Pte. Ltd. (the Company) has attained an in-principle approval
-          from the Monetary Authority of Singapore (MAS) for the grant of a
-          Major Payment Institution license under the Payment Services Act 2019
-          for the provision of DPT services. The Monetary Authority of Singapore
-          (MAS) requires us to provide this risk warning to you as a customer of
-          a Digital Payment Token (DPT) service provider. Before you pay your
-          DPT service provider any money or DPT, you should be aware of the
-          following. 1. Please note that you may not be able to recover all the
-          DPTs you paid to your DPT service provider if the Company's business
-          fails. 2. You should not transact in the DPT if you are not familiar
-          with this DPT. This includes how the DPT is created, and how the DPT
-          you intend to transact is transferred or held by your DPT service
-          provider. 3. You should be aware that the value of DPTs may fluctuate
-          greatly. You should transact DPTs only if you are prepared to accept
-          the risk of losing all of the money you put into such tokens. 4. You
-          should be aware that your DPT service provider, as part of its licence
-          to provide DPT services, may offer services related to DPTs which are
-          promoted as having a stable value, commonly known as "stablecoins".
-          Kindly note that the DPT borrowing and lending services provided by
-          the Company are not regulated by the MAS under the Payment Services
-          Act 2019. Copyright © 2022 Hodlnaut. All rights reserved.
-        </Typography>
+        <Typography variant="caption">{t("footer_caption")}</Typography>
+
+        <Typography variant="caption">{t("copyright_text")}</Typography>
       </Box>
     </Container>
   );

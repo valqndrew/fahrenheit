@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import { InputAdornment, MenuItem, TextField } from "@mui/material";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 
 const pages = ["Integrate", "Secure", "Authenticate", "Lock", "USE"];
 
@@ -29,13 +30,14 @@ const langs = [
 ];
 
 const LandingAppBar = () => {
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const [lang, setLang] = React.useState("");
+  const [lang, setLang] = React.useState("en");
 
   const handleLangChange = (e) => {
     setLang(e.target.value);
@@ -49,7 +51,7 @@ const LandingAppBar = () => {
           <Toolbar disableGutters>
             {/* Desktop */}
             <Box sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
-              <Typography variant="h6">Fahrenheit</Typography>
+              <Typography variant="h6">{t("app_title")}</Typography>
             </Box>
 
             {/* Mobile */}
@@ -59,7 +61,7 @@ const LandingAppBar = () => {
               </IconButton>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <Typography variant="h6">Fahrenheit</Typography>
+              <Typography variant="h6">{t("app_title")}</Typography>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <TextField

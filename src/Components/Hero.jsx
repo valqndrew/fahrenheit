@@ -1,23 +1,20 @@
 import { Button, Container, Typography, Box } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Container align="center">
-        <Typography variant="h6">
-          The easiest way to earn interest on your crypto
-        </Typography>
-        <Typography variant="body">Earn up to 12.73% APY </Typography>
+        <Typography variant="h6">{t("hero_title")}</Typography>
         <Typography variant="body">
-          with a crypto interest account from Fahrenheit. Deposit your crypto
-          and start earning immediately with no lock-in periods or minimum
-          deposits
+          {t("hero_body")}
         </Typography>
 
         <Box>
-          <Button variant="contained">Get Started</Button>
-          <Button variant="outlined">Demo</Button>
+          <Button variant="contained">{t("get_started_button")}</Button>
+          <Button variant="outlined">{t("demo_button")}</Button>
         </Box>
       </Container>
     </>
