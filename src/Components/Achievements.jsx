@@ -5,13 +5,9 @@ import { useTranslation } from "react-i18next";
 const AchievementItem = ({ head, title }) => {
   return (
     <Grid item xs={12}>
-      <Paper sx={{ p: 2 }}>
-        <Typography align="center" variant="h3">
-          {head}
-        </Typography>
-        <Typography align="center" variant="body1">
-          {title}
-        </Typography>
+      <Paper sx={{ p: 2 }} align="center">
+        <Typography gutterBottom variant="h3">{head}</Typography>
+        <Typography gutterBottom variant="body1">{title}</Typography>
       </Paper>
     </Grid>
   );

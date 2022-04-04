@@ -7,13 +7,15 @@ const Hero = () => {
   return (
     <>
       <Container align="center">
-        <Typography variant="h6">{t("hero_title")}</Typography>
-        <Typography variant="body">
-          {t("hero_body")}
+        <Typography variant="h4" m={2}>
+          {t("hero_title")}
         </Typography>
+        <Typography variant="body">{t("hero_body")}</Typography>
 
-        <Box>
-          <Button variant="contained">{t("get_started_button")}</Button>
+        <Box m={2}>
+          <Button variant="contained" sx={{ mr: 1 }}>
+            {t("get_started_button")}
+          </Button>
           <Button variant="outlined">{t("demo_button")}</Button>
         </Box>
       </Container>

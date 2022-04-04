@@ -11,15 +11,20 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { FooterTitle } from "../styles/styles";
 
 const FooterLink = ({ link }) => {
-  return <Typography variant="body2">{link}</Typography>;
+  return (
+    <Typography variant="body2" gutterButtom>
+      {link}
+    </Typography>
+  );
 };
 
 const FooterGroup = ({ title, links }) => {
   return (
     <Grid item xs={12}>
-      <Typography variant="h6">{title}</Typography>
+      <FooterTitle variant="h6">{title}</FooterTitle>
       {links.map((link, index) => (
         <FooterLink link={link} key={index} />
       ))}
@@ -57,23 +62,23 @@ const Footer = () => {
   ];
 
   return (
-    <Container align="center">
+    <Container align="center" sx={{ mt: 2 }}>
       <Grid container spacing={2}>
         {footerGroups.map(({ title, links }, index) => (
           <FooterGroup title={title} links={links} key={index} />
         ))}
       </Grid>
 
-      <Box>
-        <Typography variant="h6">{t("subscribe_title")}</Typography>
-        <Box>
+      <Box mt={2}>
+        <FooterTitle variant="h6">{t("subscribe_title")}</FooterTitle>
+        <Box mt={2}>
           <TextField label={t("your_email")} />
           <Button variant="contained">{t("subscribe_button")}</Button>
         </Box>
       </Box>
 
-      <Box>
-        <Typography variant="h6">{t("connect_title")}</Typography>
+      <Box mt={2}>
+        <FooterTitle variant="h6">{t("connect_title")}</FooterTitle>
         <Box>
           <IconButton>
             <TelegramIcon />
@@ -84,8 +89,8 @@ const Footer = () => {
         </Box>
       </Box>
 
-      <Box>
-        <Typography variant="h6">{t("footer_title")}</Typography>
+      <Box mt={2}>
+        <FooterTitle variant="h6">{t("footer_title")}</FooterTitle>
         <Box>
           <Button>{t("t_c_button")}</Button>
           <Button>{t("privacy_text")}</Button>

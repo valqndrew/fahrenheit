@@ -46,7 +46,12 @@ const LandingAppBar = () => {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        sx={{
+          background: "white",
+        }}
+      >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             {/* Desktop */}
@@ -56,7 +61,7 @@ const LandingAppBar = () => {
 
             {/* Mobile */}
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton size="large" onClick={toggleMenu} color="inherit">
+              <IconButton size="large" onClick={toggleMenu} color="primary">
                 <MenuIcon />
               </IconButton>
             </Box>
@@ -65,10 +70,11 @@ const LandingAppBar = () => {
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <TextField
+                // color="primary"
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <LanguageOutlinedIcon />
+                      <LanguageOutlinedIcon color="primary" />
                     </InputAdornment>
                   ),
                 }}
@@ -91,7 +97,7 @@ const LandingAppBar = () => {
                   key={page}
                   onClick={toggleMenu}
                   sx={{ my: 2, display: "block" }}
-                  color="secondary"
+                  color="primary"
                 >
                   {page}
                 </Button>

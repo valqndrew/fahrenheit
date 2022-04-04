@@ -23,8 +23,10 @@ const Cryptos = () => {
   const { t } = useTranslation();
   return (
     <Container align="center">
-      <Typography variant="h6">{t("cryptos_title")}</Typography>
-      <Typography variant="subtitle1">
+      <Typography variant="h5" color="primary" gutterBottom>
+        {t("cryptos_title")}
+      </Typography>
+      <Typography variant="subtitle1" gutterBottom>
         {t("cryptos_subtitle")}
       </Typography>
       <Grid container spacing={2}>
@@ -32,7 +34,11 @@ const Cryptos = () => {
           <CryptoItem name={name} key={index} />
         ))}
       </Grid>
-      <Button variant="contained">{t("our_rates_button")}</Button>
+      <Button variant="contained" sx={{
+        m: 2
+      }}>
+        {t("our_rates_button")}
+      </Button>
     </Container>
   );
 };
