@@ -1,12 +1,20 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  List,
+  ListItem,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Step = ({ value }) => {
+const Step = ({ value, index }) => {
   return (
-    <Box>
+    <ListItem sx={{ display: "flex" }}>
+      <Typography mr color="primary">{index}</Typography>
       <Typography>{value}</Typography>
-    </Box>
+    </ListItem>
   );
 };
 
@@ -21,16 +29,19 @@ const TokenSwap = () => {
         mt: 2,
       }}
     >
-      <Typography gutterBottom variant="h6">
-        {t("token_swap_title")}
-      </Typography>
-      <Typography gutterBottom variant="p">
-        {t("token_swap_paragraph")}
-      </Typography>
-
-      {steps.map((value, index) => (
-        <Step value={value} key={index} />
-      ))}
+      <Box mb={1}>
+        <Typography gutterBottom variant="h6">
+          {t("token_swap_title")}
+        </Typography>
+        <Typography gutterBottom variant="p">
+          {t("token_swap_paragraph")}
+        </Typography>
+      </Box>
+      <List>
+        {steps.map((value, index) => (
+          <Step value={value} key={index} index={index} />
+        ))}
+      </List>
 
       <Button
         variant="contained"

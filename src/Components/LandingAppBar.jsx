@@ -7,10 +7,12 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import { InputAdornment, MenuItem, TextField } from "@mui/material";
+import { InputAdornment, MenuItem, Grid, TextField } from "@mui/material";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
+import Logo from "../img/logo.svg";
+import "../styles/styles.css";
 
 const pages = ["Integrate", "Secure", "Authenticate", "Lock", "USE"];
 
@@ -54,41 +56,33 @@ const LandingAppBar = () => {
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            {/* Desktop */}
-            <Box sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
-              <Typography variant="h6">{t("app_title")}</Typography>
-            </Box>
-
-            {/* Mobile */}
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton size="large" onClick={toggleMenu} color="primary">
-                <MenuIcon />
-              </IconButton>
-            </Box>
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <Typography variant="h6">{t("app_title")}</Typography>
-            </Box>
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <TextField
-                // color="primary"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <LanguageOutlinedIcon color="primary" />
-                    </InputAdornment>
-                  ),
-                }}
-                select
-                value={lang}
-                onChange={handleLangChange}
-              >
-                {langs.map(({ value, label }) => (
-                  <MenuItem key={value} value={value}>
-                    {label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </Box>
+            <Grid container justifyContent="space-between">
+              <Grid item xs={6}>
+                <img src={Logo} className="logo" />
+              </Grid>
+              <Grid item xs={6}>
+                <Box display="flex" justifyContent="flex-end">
+                  <TextField
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <LanguageOutlinedIcon color="primary" />
+                        </InputAdornment>
+                      ),
+                    }}
+                    select
+                    value={lang}
+                    onChange={handleLangChange}
+                  >
+                    {langs.map(({ value, label }) => (
+                      <MenuItem key={value} value={value}>
+                        {label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </Box>
+              </Grid>
+            </Grid>
 
             {/* Desktop */}
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>

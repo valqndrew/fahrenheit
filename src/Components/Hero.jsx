@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <>
       <Container align="center">
-        <Typography variant="h4" m={2}>
+        <Typography variant="h3" color="primary" m={2}>
           {t("hero_title")}
         </Typography>
         <Typography variant="body">{t("hero_body")}</Typography>

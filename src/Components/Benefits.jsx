@@ -6,12 +6,12 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 const BenefitItem = ({ benefit }) => {
   return (
     <Grid item xs={12} md={6}>
-      <Box sx={{display: "flex"}}>
+      <Box sx={{ display: "flex" }}>
         <Icon>
           <CheckCircleIcon color="primary" />
         </Icon>
 
-        {benefit}
+        <Typography variant="body2" ml={1}>{benefit}</Typography>
       </Box>
     </Grid>
   );
@@ -27,7 +27,7 @@ const Benefits = () => {
   ];
   return (
     <Container sx={{ mb: 2 }}>
-      <Typography gutterBottom variant="h6">
+      <Typography color="primary" gutterBottom variant="h4">
         {t("benefits_title")}
       </Typography>
       <Typography gutterBottom variant="body1">
