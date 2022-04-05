@@ -1,4 +1,4 @@
-import { Button, Container, Typography, Box } from "@mui/material";
+import { Button, Container, Typography, Box, Link } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -13,10 +13,21 @@ const Hero = () => {
         <Typography variant="body">{t("hero_body")}</Typography>
 
         <Box m={2}>
-          <Button variant="contained" sx={{ mr: 1 }}>
+          <Button
+            component={Link}
+            href="https://t.me/Fahrenheitsupport"
+            variant="contained"
+            sx={{ mr: 1 }}
+          >
             {t("get_started_button")}
           </Button>
-          <Button variant="outlined">{t("demo_button")}</Button>
+          <Button
+            component={Link}
+            href="https://t.me/Fahrenheitsupport"
+            variant="outlined"
+          >
+            {t("demo_button")}
+          </Button>
         </Box>
       </Container>
     </>

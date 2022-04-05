@@ -1,13 +1,18 @@
 import { Container, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { PrimaryColorContainer } from "../styles/styles";
 
 const AchievementItem = ({ head, title }) => {
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} mb={2}>
       <Paper sx={{ p: 2 }} align="center">
-        <Typography gutterBottom variant="h3">{head}</Typography>
-        <Typography gutterBottom variant="body1">{title}</Typography>
+        <Typography variant="h3" color="primary">
+          {head}
+        </Typography>
+        <Typography gutterBottom variant="body1">
+          {title}
+        </Typography>
       </Paper>
     </Grid>
   );
@@ -31,13 +36,13 @@ const Achievements = () => {
   ];
 
   return (
-    <Container>
-      <Grid container spacing={2}>
+    <PrimaryColorContainer>
+      <Grid container spacing={1}>
         {achievements.map(({ head, title }, index) => (
           <AchievementItem head={head} title={title} key={index} />
         ))}
       </Grid>
-    </Container>
+    </PrimaryColorContainer>
   );
 };
 

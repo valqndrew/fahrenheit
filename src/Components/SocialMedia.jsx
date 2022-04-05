@@ -3,7 +3,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 import "../styles/styles.css";
-import { Box, Fab } from "@mui/material";
+import { Box, Fab, Link } from "@mui/material";
 import { SocialFab } from "../styles/styles";
 
 const SocialMedia = () => {
@@ -16,6 +16,8 @@ const SocialMedia = () => {
         sx={{
           right: 20,
         }}
+        component={Link}
+        href="https://t.me/Fahrenheitsupport"
       >
         <TelegramIcon />
       </SocialFab>

@@ -71,9 +71,13 @@ const Footer = () => {
 
       <Box mt={2}>
         <FooterTitle variant="h6">{t("subscribe_title")}</FooterTitle>
-        <Box mt={2}>
-          <TextField label={t("your_email")} />
-          <Button variant="contained">{t("subscribe_button")}</Button>
+        <Box mt={2} display="flex" justifyContent={"center"}>
+          <TextField label={t("your_email")} sx={{
+            mr: 1
+          }} />
+          <Button variant="contained">
+            {t("subscribe_button")}
+          </Button>
         </Box>
       </Box>
 

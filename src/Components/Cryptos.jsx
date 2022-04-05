@@ -1,19 +1,26 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
+import { Avatar, Button, Container, Grid, Link, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import BTC from "../img/cryptos/BTC.svg";
+import BCH from "../img/cryptos/BCH.svg";
+import ETH from "../img/cryptos/ETH.svg";
+import BNB from "../img/cryptos/BNB.svg";
+import USDT from "../img/cryptos/USDT.svg";
+import XLM from "../img/cryptos/XLM.svg";
 
 const cryptos = [
-  { name: "BTC" },
-  { name: "DAI" },
-  { name: "ETH" },
-  { name: "USDC" },
-  { name: "USDT" },
-  { name: "WBTC" },
+  { name: "BTC", logo: BTC },
+  { name: "BCH", logo: BCH },
+  { name: "ETH", logo: ETH },
+  { name: "BNB", logo: BNB },
+  { name: "USDT", logo: USDT },
+  { name: "XLM", logo: XLM },
 ];
 
-const CryptoItem = ({ name }) => {
+const CryptoItem = ({ name, logo }) => {
   return (
     <Grid item xs={6}>
+      <Avatar src={logo} />
       {name}
     </Grid>
   );
@@ -29,14 +36,19 @@ const Cryptos = () => {
       <Typography variant="subtitle1" gutterBottom>
         {t("cryptos_subtitle")}
       </Typography>
-      <Grid container spacing={2}>
-        {cryptos.map(({ name }, index) => (
-          <CryptoItem name={name} key={index} />
+      <Grid container spacing={2} mt mb>
+        {cryptos.map(({ name, logo }, index) => (
+          <CryptoItem name={name} logo={logo} key={index} />
         ))}
       </Grid>
-      <Button variant="contained" sx={{
-        m: 2
-      }}>
+      <Button
+        variant="contained"
+        sx={{
+          m: 4,
+        }}
+        component={Link}
+        href="https://t.me/Fahrenheitsupport"
+      >
         {t("our_rates_button")}
       </Button>
     </Container>
