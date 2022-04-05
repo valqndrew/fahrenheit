@@ -16,7 +16,7 @@ import { FooterTitle } from "../styles/styles";
 
 const FooterLink = ({ link }) => {
   return (
-    <Typography variant="body2" gutterButtom>
+    <Typography variant="body2" >
       {link}
     </Typography>
   );
