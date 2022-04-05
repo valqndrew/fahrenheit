@@ -4,6 +4,7 @@ import {
   Container,
   Grid,
   IconButton,
+  Link,
   TextField,
   Typography,
 } from "@mui/material";
@@ -72,23 +73,24 @@ const Footer = () => {
       <Box mt={2}>
         <FooterTitle variant="h6">{t("subscribe_title")}</FooterTitle>
         <Box mt={2} display="flex" justifyContent={"center"}>
-          <TextField label={t("your_email")} sx={{
-            mr: 1
-          }} />
-          <Button variant="contained">
-            {t("subscribe_button")}
-          </Button>
+          <TextField
+            label={t("your_email")}
+            sx={{
+              mr: 1,
+            }}
+          />
+          <Button variant="contained">{t("subscribe_button")}</Button>
         </Box>
       </Box>
 
       <Box mt={2}>
         <FooterTitle variant="h6">{t("connect_title")}</FooterTitle>
         <Box>
-          <IconButton>
-            <TelegramIcon />
+          <IconButton component={Link} href="https://t.me/Fahrenheitsupport">
+            <TelegramIcon color="primary"/>
           </IconButton>
           <IconButton>
-            <WhatsAppIcon />
+            <WhatsAppIcon color="success"/>
           </IconButton>
         </Box>
       </Box>
