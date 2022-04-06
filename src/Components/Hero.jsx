@@ -2,6 +2,8 @@ import { Button, Container, Typography, Box, Link } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import TypeAnimation from "react-type-animation";
+import Lottie from "lottie-react";
+import Rocket from "../img/lottie/rocket.json";
 import "../styles/styles.css";
 
 const Hero = () => {
@@ -36,16 +38,21 @@ const Hero = () => {
               2000,
               "",
             ]}
-            wrapper="h1"
+            wrapper="div"
+            className="crypto-text"
             repeat={Infinity}
           />
         </Box>
         <Typography variant="body">{t("hero_body")}</Typography>
 
+        <Box>
+          <Lottie animationData={Rocket} loop autoplay />
+        </Box>
+
         <Box m={2}>
           <Button
             component={Link}
-            href="https://t.me/Fahrenheitsupport"
+            href="https://t.me/FahrenheitCryptoInvestmentsBot"
             variant="contained"
             sx={{ mr: 1 }}
           >
@@ -53,7 +60,7 @@ const Hero = () => {
           </Button>
           <Button
             component={Link}
-            href="https://t.me/Fahrenheitsupport"
+            href="https://t.me/FahrenheitCryptoInvestmentsBot"
             variant="outlined"
           >
             {t("demo_button")}

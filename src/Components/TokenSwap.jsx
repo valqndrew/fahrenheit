@@ -52,7 +52,7 @@ const TokenSwap = () => {
           mt: 2,
         }}
         component={Link}
-        href="https://t.me/Fahrenheitsupport"
+        href="https://t.me/FahrenheitCryptoInvestmentsBot"
       >
         {t("sign_up_button")}
       </Button>

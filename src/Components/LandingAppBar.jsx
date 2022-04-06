@@ -2,9 +2,6 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import { InputAdornment, MenuItem, Grid, TextField } from "@mui/material";
@@ -18,10 +15,6 @@ const pages = ["Integrate", "Secure", "Authenticate", "Lock", "USE"];
 
 const langs = [
   {
-    value: "",
-    label: "",
-  },
-  {
     value: "en",
     label: "en",
   },
@@ -32,14 +25,13 @@ const langs = [
 ];
 
 const LandingAppBar = () => {
-  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const [lang, setLang] = React.useState("de");
+  const [lang, setLang] = React.useState("en");
 
   const handleLangChange = (e) => {
     setLang(e.target.value);

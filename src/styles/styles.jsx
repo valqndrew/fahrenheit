@@ -15,5 +15,7 @@ export const FooterTitle = styled(Typography)({
 });
 
 export const PrimaryColorContainer = styled(Container)({
-  background: theme.palette.primary.light,
+  // background: theme.palette.primary.main,
 });
+
+

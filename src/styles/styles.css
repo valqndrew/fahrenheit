@@ -12,6 +12,8 @@ li {
   color: "blue";
 }
 
-.hero-animated-text {
-  color: "#42a5f5";
+.crypto-text {
+  font-size: xx-large;
+  height: 50px;
+  color: rgb(25, 149, 206);
 }
